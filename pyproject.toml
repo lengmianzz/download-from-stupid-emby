@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "download-from-stupid-emby"
 version = "0.0.0"
-description = ""
+description = "稳定的EMBY服资源下载器"
 authors = ["lengmianzz"]
 readme = "README.md"
+packages = [
+    { include = "src" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
