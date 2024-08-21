@@ -10,6 +10,7 @@ from typing import Dict, List, Tuple
 from src.downloader import get_media_stream, saveMedia, search_media, downloadSeries, show_media
 from src.spider import login
 from src.utils import config, MEMORY_PATH
+from src.errors import LackConfigError
 
 
 async def readMemoryAndReDownload(memory: Dict[str, List[Tuple[Path, Path, str, int]]]) -> None:
@@ -33,6 +34,9 @@ async def readMemoryAndReDownload(memory: Dict[str, List[Tuple[Path, Path, str, 
             
 
 async def main() -> None:
+    if not all([config.host, config.user_name, config.password]):
+        raise LackConfigError("[-]请填写完配置再运行项目")
+    
     with open(MEMORY_PATH, "r") as f:
         memorys = json.load(f)
     

@@ -3,7 +3,6 @@ from pathlib import Path
 import tomlkit
 
 from src.config import Config
-from src.errors import LackConfigError
 
 
 CURRENT_DIR = Path(__file__).parent
@@ -15,8 +14,6 @@ with open(CONFIG_PATH) as f:
 
 config = Config.model_validate(dct["emby"])
 
-if not all([config.host, config.user_name, config.password]):
-    raise LackConfigError("[-]请填写完配置再运行项目")
 
 PROXY: str | None = dct["proxy"].unwrap()["proxy"] if dct["proxy"].unwrap()["proxy"] else None
 
