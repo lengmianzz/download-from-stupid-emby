@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "download-from-stupid-emby"
+version = "0.0.0"
+description = ""
+authors = ["lengmianzz"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tomlkit = "^0.12.5"
+tqdm = "^4.66.4"
+httpx = "^0.27.0"
+pydantic = "^2.8.2"
+loguru = "^0.7.2"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.8.0"
+pytest = "^8.3.2"
+pytest-asyncio = "^0.23.8"
+
+[tool.poetry-dynamic-versioning]
+enable = true      
+metadata=false      
+vcs = "git"        
+format = "v{base}"  
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+

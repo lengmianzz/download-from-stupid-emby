@@ -1,0 +1,15 @@
+[emby]
+host = ""
+user_name = ""
+password = ""
+api_key = ""
+user_id = ""
+
+[store]
+path = "./medias"
+
+[proxy]
+proxy = ""
+
+
+
