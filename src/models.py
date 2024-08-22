@@ -10,5 +10,3 @@ class Media(BaseModel):
     series_name: str
     season: int | str
     episode: int | str
-
-    
